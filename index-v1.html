@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ProArt P16 | One Laptop. A Whole Team Inside.</title>
+<meta name="description" content="ASUS ProArt P16 (H7607)：一部 Laptop，一整隊創作團隊。本地 AI Agent、4K ASUS Lumina Pro OLED、ProArt 創作者生態系統、12.9mm 纖薄設計。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+HK:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0B0C0E; --nano:#111214; --graphite:#1C1D21; --graphite-2:#2A2C30; --line:rgba(242,241,238,.10);
+  --grey:#8A8D93; --off:#F2F1EE;
+  --blue:#1F5BFF; --violet:#8A3FFC; --lime:#9BE22D; --orange:#FF7A1A; --pink:#FF2E9A;
+  --spectrum:linear-gradient(90deg,var(--blue),var(--violet),var(--lime),var(--orange),var(--pink));
+  --display:"Inter Tight","Noto Sans HK",system-ui,sans-serif;
+  --body:"Inter","Noto Sans HK",system-ui,sans-serif;
+  --zh:"Noto Sans HK","Inter",system-ui,sans-serif;
+  --wrap:min(1240px,100% - 48px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--black)}
+body{background:var(--black);color:var(--off);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--off);outline-offset:3px;border-radius:6px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.zh{font-family:var(--zh)}
+.eyebrow{font:600 13px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+.spectrum-bar{height:3px;width:120px;background:var(--spectrum);border-radius:3px}
+
+/* progress + nav */
+.progress{position:fixed;inset:0 0 auto 0;height:2px;z-index:60;background:var(--spectrum);transform-origin:0 50%;transform:scaleX(0)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,12,14,.72);backdrop-filter:saturate(140%) blur(18px);-webkit-backdrop-filter:saturate(140%) blur(18px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px}
+.brand{display:flex;align-items:center;gap:14px;font:600 15px var(--display);letter-spacing:.02em}
+.brand img{height:16px;width:auto}
+.brand i{width:1px;height:18px;background:rgba(242,241,238,.3)}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{font:500 14px var(--zh);color:rgba(242,241,238,.68);transition:color .2s;position:relative;padding:6px 0}
+.nav ul a:hover,.nav ul a.on{color:var(--off)}
+.nav ul a.on::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--accent,var(--off))}
+.btn{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:999px;font:600 15px var(--zh);transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s;white-space:nowrap}
+.btn-primary{background:var(--off);color:var(--black)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(242,241,238,.18)}
+.btn-ghost{border:1px solid rgba(242,241,238,.28)}
+.btn-ghost:hover{border-color:var(--off);background:rgba(242,241,238,.06)}
+.btn-sm{height:38px;padding:0 16px;font-size:14px}
+.btn svg{width:16px;height:16px}
+.menu-btn{display:none;width:40px;height:40px;border-radius:10px;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:1.5px;background:var(--off);position:relative;transition:transform .3s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.nav.open .menu-btn span{background:transparent}
+.nav.open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+.nav.open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;padding:120px 0 64px;display:flex;flex-direction:column;align-items:center;text-align:center;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;z-index:-2;
+  background:radial-gradient(50% 45% at 50% 62%,rgba(138,63,252,.22),transparent 70%),radial-gradient(35% 30% at 30% 70%,rgba(31,91,255,.18),transparent 70%),radial-gradient(35% 30% at 72% 72%,rgba(255,46,154,.14),transparent 70%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 50%,transparent 0,var(--black) 78%);pointer-events:none}
+.hero .eyebrow{margin-bottom:22px}
+.hero h1{font:800 clamp(44px,8.2vw,124px)/.95 var(--display);letter-spacing:-.035em;max-width:14ch}
+.hero h1 .grad{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shift 8s linear infinite}
+@keyframes shift{to{background-position:200% 0}}
+.hero .sub{font:400 clamp(17px,1.6vw,20px)/1.65 var(--zh);color:rgba(242,241,238,.72);max-width:38em;margin:26px auto 0}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.device{position:relative;width:min(1000px,92vw);margin-top:72px}
+.device .shell{width:100%;filter:drop-shadow(0 50px 80px rgba(0,0,0,.6))}
+.device .screen{position:absolute;left:14.3%;top:2.5%;width:71.35%;height:70.6%;overflow:hidden;border-radius:2px}
+.device .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.2s var(--ease),transform 6s var(--ease)}
+.device .screen .inside{opacity:0;transform:scale(1.08)}
+.device.reveal .screen .inside{opacity:1;transform:scale(1)}
+.device .glow{position:absolute;left:10%;right:10%;bottom:-6%;height:30%;background:var(--spectrum);filter:blur(70px);opacity:.28;z-index:-1;border-radius:50%}
+.toggle{position:absolute;right:2%;top:-48px;display:flex;align-items:center;gap:10px;font:500 13px var(--zh);color:rgba(242,241,238,.75);padding:8px 14px 8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(17,18,20,.6);backdrop-filter:blur(10px)}
+.toggle .sw{width:34px;height:20px;border-radius:20px;background:var(--graphite-2);position:relative;transition:background .3s}
+.toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--off);transition:transform .3s var(--ease)}
+.toggle[aria-pressed="true"] .sw{background:var(--violet)}
+.toggle[aria-pressed="true"] .sw::after{transform:translateX(14px)}
+.scroll-cue{margin-top:40px;font:500 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--grey);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:36px;background:linear-gradient(var(--grey),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1)}}
+
+/* stats */
+.stats{border-block:1px solid var(--line);background:linear-gradient(180deg,var(--nano),var(--black))}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:36px 28px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:700 clamp(30px,3.4vw,46px)/1 var(--display);letter-spacing:-.02em}
+.stat b small{font-size:.5em;font-weight:600;margin-left:4px;color:var(--grey)}
+.stat span{display:block;margin-top:10px;font:500 14px var(--zh);color:var(--grey)}
+.stat::before{content:"";display:block;width:22px;height:3px;border-radius:3px;background:var(--c);margin-bottom:18px}
+
+/* section scaffold */
+section{position:relative;scroll-margin-top:64px}
+.sec{padding:clamp(96px,12vw,160px) 0}
+.sec-head{max-width:760px;margin-bottom:56px}
+.sec-head h2{font:800 clamp(36px,5vw,68px)/1.05 var(--display);letter-spacing:-.03em;margin:16px 0 18px}
+.sec-head h2 .zh{display:block;font:700 clamp(24px,2.6vw,34px)/1.35 var(--zh);letter-spacing:0;color:rgba(242,241,238,.62);margin-top:12px}
+.sec-head p{font:400 18px/1.7 var(--zh);color:rgba(242,241,238,.7)}
+
+/* team */
+.team{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:40px;align-items:stretch}
+.roles{display:flex;flex-direction:column;gap:8px}
+.role{--c:var(--off);position:relative;text-align:left;padding:18px 20px 18px 22px;border-radius:16px;border:1px solid var(--line);background:rgba(28,29,33,.4);transition:background .3s,border-color .3s,transform .3s var(--ease);overflow:hidden}
+.role::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--c);opacity:.35;transition:opacity .3s}
+.role:hover{background:rgba(42,44,48,.5)}
+.role[aria-selected="true"]{background:var(--graphite);border-color:color-mix(in srgb,var(--c) 50%,transparent)}
+.role[aria-selected="true"]::before{opacity:1}
+.role .t{display:flex;align-items:baseline;gap:10px;font:700 18px var(--display)}
+.role .t em{font:500 14px var(--zh);font-style:normal;color:var(--grey)}
+.role .d{font:400 14px/1.55 var(--zh);color:rgba(242,241,238,.6);margin-top:6px}
+.role .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--c)}
+.role[aria-selected="true"] .bar{animation:fill var(--dur,5s) linear forwards}
+.paused .role .bar{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+.stage{position:relative;border-radius:24px;overflow:hidden;background:var(--graphite);min-height:420px;border:1px solid var(--line)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .7s var(--ease),transform 1.4s var(--ease)}
+.stage img.on{opacity:1;transform:scale(1)}
+.stage .cap{position:absolute;left:24px;bottom:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;z-index:2}
+.stage .cap::before{content:"";position:absolute;inset:-120px -24px -24px;background:linear-gradient(transparent,rgba(0,0,0,.65));z-index:-1}
+.stage .chip{font:600 13px var(--zh);padding:8px 14px;border-radius:999px;background:var(--c,var(--off));color:#fff}
+.stage .chip.dark{color:var(--black)}
+.stage .count{font:600 13px var(--body);letter-spacing:.14em;color:rgba(242,241,238,.8)}
+.team-note{margin-top:28px;display:flex;align-items:center;gap:16px;color:var(--grey);font:400 15px var(--zh)}
+
+/* ksp */
+.ksp{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,88px);align-items:center}
+.ksp.flip .txt{order:2}
+.ksp .num{font:700 14px var(--display);letter-spacing:.2em;color:var(--c)}
+.ksp h3{font:900 clamp(30px,3.6vw,48px)/1.2 var(--zh);margin:18px 0 14px;letter-spacing:.01em}
+.ksp .spec{font:600 clamp(17px,1.5vw,20px)/1.5 var(--zh);color:var(--off);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ksp .spec span{padding:6px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 60%,transparent);color:color-mix(in srgb,var(--c) 45%,var(--off));font-size:15px}
+.ksp p{margin-top:20px;font:400 17px/1.75 var(--zh);color:rgba(242,241,238,.68);max-width:30em}
+.ksp ul{list-style:none;margin-top:26px;display:grid;gap:12px}
+.ksp li{display:flex;gap:12px;font:500 15px/1.6 var(--zh);color:rgba(242,241,238,.82)}
+.ksp li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--c)}
+.media{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--graphite)}
+.media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.media:hover img{transform:scale(1.03)}
+.media-stack{display:grid;gap:16px}
+.media-stack .media.small{width:62%;margin-left:auto;margin-top:-18%;position:relative;z-index:2;box-shadow:0 30px 60px rgba(0,0,0,.55)}
+.oled{padding:0;overflow:hidden}
+.oled .bleed{position:relative;height:min(92vh,880px);display:flex;align-items:flex-end}
+.oled .bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.oled .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,12,14,.92) 0%,rgba(11,12,14,.55) 30%,transparent 55%),linear-gradient(180deg,var(--black) 0%,transparent 22%,transparent 60%,var(--black) 100%)}
+.oled .bleed .wrap{position:relative;z-index:2;padding-bottom:80px}
+.oled .ksp{grid-template-columns:1fr}
+.oled .ksp .txt{max-width:640px}
+
+/* thin */
+.thin-wrap{position:relative;margin-top:40px;padding:80px 0 40px}
+.thin-wrap img{width:78%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))}
+.measure{position:absolute;right:0;top:0;bottom:0;display:flex;align-items:center;gap:20px}
+.measure .ruler{position:relative;width:1px;height:96px;background:var(--lime);transform:scaleY(0);transition:transform 1s var(--ease) .3s}
+.measure .ruler::before,.measure .ruler::after{content:"";position:absolute;left:-8px;width:17px;height:1px;background:var(--lime)}
+.measure .ruler::before{top:0}.measure .ruler::after{bottom:0}
+.measure b{font:800 clamp(40px,6vw,84px)/1 var(--display);letter-spacing:-.03em;opacity:0;transform:translateX(-10px);transition:opacity .8s .6s,transform .8s .6s var(--ease)}
+.measure b small{font-size:.38em;color:var(--grey);margin-left:4px}
+.in .measure .ruler{transform:scaleY(1)}
+.in .measure b{opacity:1;transform:none}
+
+/* gallery */
+.viewer{display:grid;grid-template-columns:1fr 120px;gap:20px;align-items:center}
+.view-main{position:relative;aspect-ratio:16/10;border-radius:28px;background:radial-gradient(60% 60% at 50% 55%,#24262b,var(--nano) 75%);border:1px solid var(--line);overflow:hidden}
+.view-main img{position:absolute;inset:8% 8%;width:84%;height:84%;object-fit:contain;opacity:0;transform:translateY(12px) scale(.98);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+.view-main img.on{opacity:1;transform:none}
+.view-main .label{position:absolute;left:24px;bottom:20px;font:600 13px var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.view-main .arrows{position:absolute;right:16px;bottom:14px;display:flex;gap:8px}
+.view-main .arrows button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:rgba(17,18,20,.7);transition:border-color .2s}
+.view-main .arrows button:hover{border-color:var(--off)}
+.thumbs{display:flex;flex-direction:column;gap:10px}
+.thumb{aspect-ratio:1;border-radius:14px;border:1px solid var(--line);background:var(--nano);padding:10px;transition:border-color .25s,background .25s}
+.thumb img{width:100%;height:100%;object-fit:contain}
+.thumb[aria-selected="true"]{border-color:var(--off);background:var(--graphite)}
+
+/* film */
+.film{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:#000}
+.film video{width:100%;height:100%;object-fit:cover}
+.film .play{position:absolute;left:24px;bottom:22px;display:flex;align-items:center;gap:12px;font:600 14px var(--zh);padding:10px 16px 10px 12px;border-radius:999px;background:rgba(11,12,14,.6);backdrop-filter:blur(10px);border:1px solid var(--line)}
+.film .play i{width:28px;height:28px;border-radius:50%;background:var(--off);display:grid;place-items:center}
+.film .play svg{width:12px;height:12px;fill:var(--black)}
+
+/* final cta */
+.final{text-align:center;overflow:hidden;isolation:isolate}
+.final::before{content:"";position:absolute;inset:auto -10% -40%;height:80%;background:var(--spectrum);filter:blur(120px);opacity:.22;z-index:-1;border-radius:50%}
+.final h2{font:800 clamp(40px,7vw,104px)/.98 var(--display);letter-spacing:-.035em;max-width:13ch;margin:22px auto 0}
+.final p{font:400 19px/1.7 var(--zh);color:rgba(242,241,238,.72);margin:24px auto 0;max-width:34em}
+.final .ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:36px}
+.final .team-img{width:min(980px,100%);margin:72px auto 0;border-radius:24px;border:1px solid var(--line);overflow:hidden}
+footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--grey);font:400 13px/1.8 var(--zh)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+@media (max-width:1024px){
+  .nav ul{gap:20px}
+  .team{grid-template-columns:1fr}
+  .stage{min-height:0;aspect-ratio:16/10;order:-1}
+  .ksp,.ksp.flip{grid-template-columns:1fr}
+  .ksp.flip .txt{order:0}
+}
+@media (max-width:860px){
+  .nav ul{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;padding:8px 24px 20px;background:rgba(11,12,14,.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s}
+  .nav ul a{display:block;padding:14px 0;font-size:16px;border-bottom:1px solid var(--line)}
+  .nav ul a.on::after{display:none}
+  .nav.open ul{opacity:1;transform:none;pointer-events:auto}
+  .menu-btn{display:inline-flex}
+  .nav .btn-sm{display:none}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat{border-left:0;border-top:1px solid var(--line);padding:26px 4px}
+  .stat:nth-child(-n+2){border-top:0}
+  .stat:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}
+  .viewer{grid-template-columns:1fr}
+  .thumbs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .thumb{flex:0 0 76px}
+  .toggle{position:static;margin:0 auto 18px;width:max-content}
+  .device{display:flex;flex-direction:column}
+  .thin-wrap img{width:100%}
+  .measure{position:static;justify-content:flex-end;margin-top:24px}
+  .media-stack .media.small{width:78%}
+}
+@media (max-width:520px){
+  :root{--wrap:calc(100% - 32px)}
+  body{font-size:16px}
+  .hero{padding-top:104px}
+  .btn{height:44px;padding:0 18px}
+  .role{padding:14px 16px 14px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="ASUS ProArt P16 首頁"><img src="assets/asus-logo-white.png" alt="ASUS"><i></i>ProArt P16</a>
+    <ul id="menu">
+      <li><a href="#team" data-c="var(--violet)">創作團隊</a></li>
+      <li><a href="#ai" data-c="var(--blue)">本地 AI</a></li>
+      <li><a href="#oled" data-c="var(--pink)">OLED 螢幕</a></li>
+      <li><a href="#eco" data-c="var(--orange)">生態系統</a></li>
+      <li><a href="#thin" data-c="var(--lime)">纖薄設計</a></li>
+      <li><a href="#film" data-c="var(--off)">發布影片</a></li>
+    </ul>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a class="btn btn-primary btn-sm" href="https://www.asus.com/hk/laptops/for-creators/proart/proart-p16-h7607/" target="_blank" rel="noopener">了解更多</a>
+      <button class="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow rv">ASUS ProArt P16 · H7607</p>
+    <h1 class="rv d1">One Laptop. A Whole <span class="grad">Team</span> Inside.</h1>
+    <p class="sub rv d2">一個人，一部 ProArt P16，就是一整隊創作團隊。<br>由策略、設計、社交內容、影片到網頁，全部在本地 AI 上一氣呵成。</p>
+    <div class="ctas rv d3">
+      <a class="btn btn-primary" href="#team">認識團隊
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn btn-ghost" href="#film">觀看發布影片</a>
+    </div>
+    <div class="device rv d3" id="device">
+      <button class="toggle" id="toggle" aria-pressed="false"><span class="sw" aria-hidden="true"></span>看看裡面的團隊</button>
+      <img class="shell" src="assets/p16-front.webp" alt="ASUS ProArt P16 Nano Black，正面打開" width="1800" height="1141">
+      <div class="screen" aria-hidden="true">
+        <img class="inside" src="assets/screen-team.webp" alt="">
+      </div>
+      <div class="glow"></div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll<i></i></div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" aria-label="主要規格">
+    <div class="wrap">
+      <div class="stat rv" style="--c:var(--blue)"><b>128<small>GB</small></b><span>最高統一記憶體</span></div>
+      <div class="stat rv d1" style="--c:var(--violet)"><b>RTX<small>Spark</small></b><span>本地 AI Agent</span></div>
+      <div class="stat rv d2" style="--c:var(--pink)"><b>4K<small>OLED</small></b><span>ASUS Lumina Pro OLED</span></div>
+      <div class="stat rv d3" style="--c:var(--lime)"><b>12.9<small>mm</small></b><span>纖薄設計</span></div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="sec" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow rv">The Team Inside</p>
+        <h2 class="rv d1">Five roles. One laptop.<span class="zh">一部 Laptop，五位創作夥伴</span></h2>
+        <p class="rv d2">一個 Product Launch 本來需要一整隊人。ProArt P16 把整隊團隊放進一部 Laptop：每個角色負責一個環節，由你一個人指揮。</p>
+      </div>
+      <div class="team" id="teamUI">
+        <div class="roles" role="tablist" aria-label="創作團隊角色">
+          <button class="role rv" role="tab" style="--c:var(--blue)" data-i="0" aria-selected="true"><span class="t">Strategist <em>策略師</em></span><span class="d">Campaign 大方向、Key Message、文案</span><i class="bar"></i></button>
+          <button class="role rv d1" role="tab" style="--c:var(--violet)" data-i="1" aria-selected="false"><span class="t">Art Director <em>美術指導</em></span><span class="d">主視覺、產品圖片、視覺風格</span><i class="bar"></i></button>
+          <button class="role rv d2" role="tab" style="--c:var(--lime)" data-i="2" aria-selected="false"><span class="t">Social Creator <em>社交內容創作者</em></span><span class="d">社交媒體貼文、Shorts</span><i class="bar"></i></button>
+          <button class="role rv d3" role="tab" style="--c:var(--orange)" data-i="3" aria-selected="false"><span class="t">Video Editor <em>影片剪接師</em></span><span class="d">產品發布影片、剪接、節奏</span><i class="bar"></i></button>
+          <button class="role rv d3" role="tab" style="--c:var(--pink)" data-i="4" aria-selected="false"><span class="t">Web Developer <em>網頁開發者</em></span><span class="d">Campaign Landing Page</span><i class="bar"></i></button>
+        </div>
+        <div class="stage rv d2" role="tabpanel" aria-live="polite">
+          <img class="on" src="assets/role-1.webp" alt="Strategist 策略師，藍色西裝，手持筆記本" loading="lazy">
+          <img src="assets/role-2.webp" alt="Art Director 美術指導，紫色西裝，手持色板" loading="lazy">
+          <img src="assets/role-3.webp" alt="Social Creator 社交內容創作者，綠色外套，手持環形燈" loading="lazy">
+          <img src="assets/role-4.webp" alt="Video Editor 影片剪接師，橙色衛衣，手持攝影機" loading="lazy">
+          <img src="assets/role-5.webp" alt="Web Developer 網頁開發者，粉紅色衛衣，手持 Laptop" loading="lazy">
+          <div class="cap"><span class="chip" id="chip" style="--c:var(--blue)">Strategist · 策略師</span><span class="count" id="count">01 / 05</span></div>
+        </div>
+      </div>
+      <p class="team-note rv"><span class="spectrum-bar"></span>全部角色，一部 ProArt P16。</p>
+    </div>
+  </section>
+
+  <!-- KSP 1 -->
+  <section class="sec" id="ai" style="padding-top:0">
+    <div class="wrap ksp" style="--c:var(--blue)">
+      <div class="txt">
+        <p class="num rv">01 · LOCAL AI</p>
+        <h3 class="rv d1">本地AI Agent<br>釋放無限創作效能</h3>
+        <div class="spec rv d2"><span>RTX Spark</span><span>最高 128GB 統一記憶體</span></div>
+        <p class="rv d2">讓多個 AI Agent 同時在本機運行，由構思、生成到修改，創作流程不再被打斷。</p>
+        <ul class="rv d3">
+          <li>同時處理多個 AI 工作流程</li>
+          <li>大容量統一記憶體，承載大型創作專案</li>
+        </ul>
+      </div>
+      <div class="media-stack rv d1">
+        <div class="media"><img src="assets/ksp-1.webp" alt="ProArt P16 內部結構與晶片示意" loading="lazy" width="1260" height="680"></div>
+        <div class="media small"><img src="assets/ksp-2.webp" alt="本地 AI 節點式工作流程介面" loading="lazy" width="1260" height="680"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KSP 2 OLED -->
+  <section class="sec oled" id="oled">
+    <div class="bleed">
+      <img src="assets/ksp-5.webp" alt="ASUS Lumina Pro OLED 螢幕顯示鮮艷花瓣影像" loading="lazy">
+      <div class="wrap">
+        <div class="ksp" style="--c:var(--pink)">
+          <div class="txt">
+            <p class="num rv">02 · DISPLAY</p>
+            <h3 class="rv d1">專業細膩視野</h3>
+            <div class="spec rv d2"><span>4K</span><span>ASUS Lumina Pro OLED</span></div>
+            <p class="rv d2">每一個色彩、每一個細節，都以你想像中的樣子呈現。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KSP 3 -->
+  <section class="sec" id="eco">
+    <div class="wrap ksp flip" style="--c:var(--orange)">
+      <div class="txt">
+        <p class="num rv">03 · ECOSYSTEM</p>
+        <h3 class="rv d1">讓靈感一氣呵成</h3>
+        <div class="spec rv d2"><span>全方位 ProArt 創作者生態系統</span></div>
+        <p class="rv d2">由 3D、設計、剪接到開發，常用的專業創作軟件都能在同一部 Laptop 上流暢銜接。</p>
+        <ul class="rv d3">
+          <li>設計、影片、3D、開發，一部 Laptop 完成</li>
+          <li>由草圖到成品，工作流程不中斷</li>
+        </ul>
+      </div>
+      <div class="media-stack rv d1">
+        <div class="media"><img src="assets/ksp-3.webp" alt="多款創作軟件圖示從 Laptop 螢幕湧出" loading="lazy" width="1260" height="680"></div>
+        <div class="media small"><img src="assets/ksp-4.webp" alt="創作者以 ProArt P16 處理 3D 工程模型" loading="lazy" width="1260" height="680"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KSP 4 THIN -->
+  <section class="sec" id="thin" style="padding-top:0">
+    <div class="wrap" style="--c:var(--lime)">
+      <div class="ksp" style="--c:var(--lime);grid-template-columns:1fr">
+        <div class="txt">
+          <p class="num rv">04 · DESIGN</p>
+          <h3 class="rv d1">讓靈感輕盈隨行</h3>
+          <div class="spec rv d2"><span>12.9mm 纖薄設計</span><span>Nano Black</span></div>
+        </div>
+      </div>
+      <div class="thin-wrap rv" id="thinWrap">
+        <img src="assets/p16-side.webp" alt="ProArt P16 側面，展示纖薄機身及連接埠" loading="lazy" width="2000" height="152">
+        <div class="measure" aria-hidden="true"><span class="ruler"></span><b>12.9<small>mm</small></b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sec" id="gallery" style="padding-top:40px">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow rv">Every Angle</p>
+        <h2 class="rv d1">Calm outside.<span class="zh">外表沉穩，內裡一整隊團隊</span></h2>
+      </div>
+      <div class="viewer rv d1">
+        <div class="view-main" id="viewMain">
+          <img class="on" src="assets/p16-34.webp" alt="ProArt P16 三分之四前方角度" loading="lazy">
+          <img src="assets/p16-front.webp" alt="ProArt P16 正面" loading="lazy">
+          <img src="assets/p16-rear.webp" alt="ProArt P16 三分之四後方角度" loading="lazy">
+          <img src="assets/p16-lid.webp" alt="ProArt P16 上蓋 ProArt 標誌" loading="lazy">
+          <img src="assets/p16-float.webp" alt="ProArt P16 懸浮角度" loading="lazy">
+          <img src="assets/p16-top.webp" alt="ProArt P16 俯視鍵盤" loading="lazy">
+          <span class="label" id="viewLabel">3/4 Front</span>
+          <div class="arrows">
+            <button id="prev" aria-label="上一個角度"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3 5 8l5 5"/></svg></button>
+            <button id="next" aria-label="下一個角度"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m6 3 5 5-5 5"/></svg></button>
+          </div>
+        </div>
+        <div class="thumbs" role="tablist" aria-label="選擇角度" id="thumbs">
+          <button class="thumb" role="tab" aria-selected="true" aria-label="3/4 Front"><img src="assets/p16-34.webp" alt="" loading="lazy"></button>
+          <button class="thumb" role="tab" aria-selected="false" aria-label="Front"><img src="assets/p16-front.webp" alt="" loading="lazy"></button>
+          <button class="thumb" role="tab" aria-selected="false" aria-label="3/4 Rear"><img src="assets/p16-rear.webp" alt="" loading="lazy"></button>
+          <button class="thumb" role="tab" aria-selected="false" aria-label="Lid"><img src="assets/p16-lid.webp" alt="" loading="lazy"></button>
+          <button class="thumb" role="tab" aria-selected="false" aria-label="Floating"><img src="assets/p16-float.webp" alt="" loading="lazy"></button>
+          <button class="thumb" role="tab" aria-selected="false" aria-label="Top-down"><img src="assets/p16-top.webp" alt="" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILM -->
+  <section class="sec" id="film" style="padding-top:40px">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow rv">Launch Film</p>
+        <h2 class="rv d1">Quiet power.<span class="zh">發布影片</span></h2>
+      </div>
+      <div class="film rv d1">
+        <video id="filmVid" src="assets/film.mp4" muted loop playsinline preload="metadata" aria-label="ProArt P16 發布影片"></video>
+        <button class="play" id="playBtn"><i><svg viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></i><span>播放</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="sec final">
+    <div class="wrap">
+      <span class="spectrum-bar rv" style="display:inline-block"></span>
+      <h2 class="rv d1">One Laptop. A Whole Team Inside.</h2>
+      <p class="rv d2">ASUS ProArt P16。由一個念頭，到一個完整 Launch，全部由你一人完成。</p>
+      <div class="ctas rv d3">
+        <a class="btn btn-primary" href="https://www.asus.com/hk/laptops/for-creators/proart/proart-p16-h7607/" target="_blank" rel="noopener">前往 ASUS 官方網站</a>
+        <a class="btn btn-ghost" href="#team">再看一次團隊</a>
+      </div>
+      <div class="team-img rv"><img src="assets/team.webp" width="1672" height="941" alt="五位不同顏色的創作團隊成員" loading="lazy"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© ASUS ProArt P16 (H7607) · Campaign Landing Page Draft</span>
+    <span>產品圖片僅供參考。規格及供應情況以 ASUS 官方公佈為準。</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // nav state, progress, active link
+  const nav = document.getElementById('nav'), bar = document.querySelector('.progress');
+  const links = [...document.querySelectorAll('#menu a')];
+  const onScroll = () => {
+    const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    nav.classList.toggle('solid', y > 24);
+    bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
+    let cur = null;
+    for (const a of links) { const s = document.querySelector(a.getAttribute('href')); if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = a; }
+    links.forEach(a => { a.classList.toggle('on', a === cur); if (a === cur) nav.style.setProperty('--accent', a.dataset.c); });
+  };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // mobile menu
+  const mb = document.querySelector('.menu-btn');
+  mb.addEventListener('click', () => { const o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+  links.forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); mb.setAttribute('aria-expanded', false); }));
+
+  // reveal on scroll
+  // (scroll-position check rather than IntersectionObserver alone, so content can never stay hidden)
+  let pending = [...document.querySelectorAll('.rv')];
+  const reveal = () => {
+    const lim = innerHeight * .92;
+    pending = pending.filter(el => { if (el.getBoundingClientRect().top < lim) { el.classList.add('in'); return false; } return true; });
+    const tw = document.getElementById('thinWrap');
+    if (tw && tw.getBoundingClientRect().top < innerHeight * .7) tw.classList.add('in');
+  };
+  addEventListener('scroll', reveal, { passive: true }); addEventListener('resize', reveal); addEventListener('load', reveal); reveal();
+
+  // hero: look inside the screen
+  const dev = document.getElementById('device'), tg = document.getElementById('toggle');
+  const setInside = on => { dev.classList.toggle('reveal', on); tg.setAttribute('aria-pressed', on); };
+  tg.addEventListener('click', () => setInside(tg.getAttribute('aria-pressed') !== 'true'));
+  if (!reduce) setTimeout(() => setInside(true), 1800);
+
+  // team tabs with auto-advance
+  const ui = document.getElementById('teamUI'), roles = [...ui.querySelectorAll('.role')], imgs = [...ui.querySelectorAll('.stage img')];
+  const chip = document.getElementById('chip'), count = document.getElementById('count');
+  const cols = ['var(--blue)','var(--violet)','var(--lime)','var(--orange)','var(--pink)'];
+  const names = ['Strategist · 策略師','Art Director · 美術指導','Social Creator · 社交內容創作者','Video Editor · 影片剪接師','Web Developer · 網頁開發者'];
+  let idx = 0, timer = null; const DUR = 5000;
+  const show = i => {
+    idx = (i + roles.length) % roles.length;
+    roles.forEach((r, k) => { r.setAttribute('aria-selected', k === idx); const b = r.querySelector('.bar'); b.style.animation = 'none'; b.offsetWidth; b.style.animation = ''; });
+    imgs.forEach((im, k) => im.classList.toggle('on', k === idx));
+    chip.textContent = names[idx]; chip.style.setProperty('--c', cols[idx]); chip.classList.toggle('dark', idx === 2);
+    count.textContent = String(idx + 1).padStart(2, '0') + ' / 05';
+  };
+  const start = () => { if (reduce) return; stop(); timer = setInterval(() => show(idx + 1), DUR); };
+  const stop = () => clearInterval(timer);
+  roles.forEach((r, k) => {
+    r.addEventListener('click', () => { show(k); start(); });
+    r.addEventListener('keydown', e => { if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); roles[idx].focus(); start(); } if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); roles[idx].focus(); start(); } });
+  });
+  ui.style.setProperty('--dur', DUR + 'ms');
+  ui.addEventListener('mouseenter', () => { stop(); ui.classList.add('paused'); });
+  ui.addEventListener('mouseleave', () => { ui.classList.remove('paused'); start(); });
+  new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: .3 }).observe(ui);
+
+
+  // angle viewer
+  const vm = [...document.querySelectorAll('#viewMain img')], th = [...document.querySelectorAll('#thumbs .thumb')], lab = document.getElementById('viewLabel');
+  let v = 0;
+  const view = i => { v = (i + vm.length) % vm.length; vm.forEach((im, k) => im.classList.toggle('on', k === v)); th.forEach((t, k) => t.setAttribute('aria-selected', k === v)); lab.textContent = th[v].getAttribute('aria-label'); };
+  th.forEach((t, k) => t.addEventListener('click', () => view(k)));
+  document.getElementById('prev').onclick = () => view(v - 1);
+  document.getElementById('next').onclick = () => view(v + 1);
+  document.getElementById('viewMain').addEventListener('keydown', e => { if (e.key === 'ArrowLeft') view(v - 1); if (e.key === 'ArrowRight') view(v + 1); });
+
+  // film
+  const vid = document.getElementById('filmVid'), pb = document.getElementById('playBtn');
+  const sync = () => { pb.querySelector('span').textContent = vid.paused ? '播放' : '暫停'; };
+  pb.onclick = () => { vid.paused ? vid.play() : vid.pause(); };
+  vid.addEventListener('play', sync); vid.addEventListener('pause', sync);
+  if (!reduce) new IntersectionObserver(([e]) => { if (e.isIntersecting) vid.play().catch(() => {}); else vid.pause(); }, { threshold: .5 }).observe(vid);
+})();
+</script>
+</body>
+</html>
